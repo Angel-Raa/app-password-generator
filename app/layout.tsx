@@ -2,7 +2,6 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/lib/provider/query-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     type: "website",
   },
-  themeColor: "#ffffff"
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -43,14 +42,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.className} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <QueryProvider>{children}</QueryProvider>
-        </ThemeProvider>
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );
