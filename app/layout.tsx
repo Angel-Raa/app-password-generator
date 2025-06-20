@@ -2,7 +2,6 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { QueryProvider } from "@/lib/provider/query-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   themeColor: "#ffffff",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 };
 
 export default function RootLayout({
@@ -42,9 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} antialiased`}>
-        <QueryProvider>{children}</QueryProvider>
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
