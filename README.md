@@ -2,9 +2,9 @@
 
 Este proyecto es una aplicación web para generar contraseñas seguras, desarrollada con las siguientes tecnologías:
 
-- **Next.js**: Framework de React para aplicaciones web modernas.
-- **Tailwind CSS**: Framework de utilidades CSS para estilos rápidos y responsivos.
-- **shadcn/ui**: Componentes UI accesibles y personalizables.
+- **Next.js**
+- **Tailwind CSS**
+- **shadcn/ui**
 
 ## Requisitos previos
 
