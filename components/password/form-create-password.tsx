@@ -11,7 +11,8 @@ import { usePasswordOptions } from "@/hooks/use-password-options"
 export const FormCreatePassword = () => {
   const [showPassword, setShowPassword] = useState(true)
   const { options, updateOption, length, setLength } = usePasswordOptions()
-  const { password, generatePassword, copyToClipboard, getPasswordStrength } = usePasswordGenerator(options, length)
+  const { password, generatePassword, copyToClipboard, savePasswordToDb, isSaving, getPasswordStrength } =
+    usePasswordGenerator(options, length)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4">
@@ -24,6 +25,8 @@ export const FormCreatePassword = () => {
           onToggleVisibility={() => setShowPassword(!showPassword)}
           onCopy={copyToClipboard}
           onGenerate={generatePassword}
+          onSave={() => savePasswordToDb()}
+          isSaving={isSaving}
           strength={getPasswordStrength()}
         />
 

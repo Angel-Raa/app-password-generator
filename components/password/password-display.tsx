@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Copy, RefreshCw, Shield, Eye, EyeOff } from "lucide-react"
+import { Copy, RefreshCw, Eye, EyeOff, Save } from "lucide-react"
 import { PasswordStrengthIndicator } from "./password-strength-indicator"
 import type { PasswordStrength } from "@/types/password"
 
@@ -12,28 +12,26 @@ interface PasswordDisplayProps {
   onToggleVisibility: () => void
   onCopy: () => void
   onGenerate: () => void
+  onSave: () => void
+  isSaving: boolean
   strength: PasswordStrength
 }
 
-export const PasswordDisplay = ({
+export function PasswordDisplay({
   password,
   showPassword,
   onToggleVisibility,
   onCopy,
   onGenerate,
+  onSave,
+  isSaving,
   strength,
-}: PasswordDisplayProps) => {
+}: PasswordDisplayProps) {
   return (
     <Card className="border-0 shadow-xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       <CardContent className="p-6">
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-green-400 flex items-center gap-2">
-              <Shield className="w-4 h-4" />
-              Tu Password Generada:
-            </p>
-            <PasswordStrengthIndicator strength={strength} />
-          </div>
+          <PasswordStrengthIndicator strength={strength} />
 
           <div className="relative">
             <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
@@ -76,6 +74,15 @@ export const PasswordDisplay = ({
             >
               <Copy className="w-4 h-4 mr-2" />
               Copiar
+            </Button>
+            <Button
+              variant="outline"
+              className="bg-green-800 border-green-600 text-white hover:bg-green-700"
+              onClick={onSave}
+              disabled={isSaving}
+            >
+              <Save className="w-4 h-4 mr-2" />
+              {isSaving ? "Guardando..." : "Guardar"}
             </Button>
           </div>
         </div>
