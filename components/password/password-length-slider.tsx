@@ -16,8 +16,8 @@ export const PasswordLengthSlider = ({ length, onLengthChange }: PasswordLengthS
       </div>
       <Slider value={length} onValueChange={onLengthChange} max={50} min={4} step={1} className="w-full" />
       <div className="flex justify-between text-xs text-gray-500">
-        <span>4</span>
-        <span>50</span>
+        <span>6</span>
+        <span>40</span>
       </div>
     </div>
   )
