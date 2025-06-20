@@ -1,30 +1,60 @@
-# Vue js error
+# Generador de Contraseñas - Documentación e Instalación
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Este proyecto es una aplicación web para generar contraseñas seguras, desarrollada con las siguientes tecnologías:
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/angel-raas-projects/v0-vue-js-error)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/6f68rhpP6tR)
+- **Next.js**: Framework de React para aplicaciones web modernas.
+- **Prisma**: ORM para la gestión de base de datos.
+- **TanStack Query**: Manejo eficiente de datos asíncronos y caché.
+- **Tailwind CSS**: Framework de utilidades CSS para estilos rápidos y responsivos.
+- **shadcn/ui**: Componentes UI accesibles y personalizables.
 
-## Overview
+## Requisitos Previos
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- Node.js (v18 o superior) o bun.js
+- bun o npm
+- Acceso a una base de datos compatible con Prisma (ej: PostgreSQL, MySQL, SQLite)
 
-## Deployment
+## Instalación
 
-Your project is live at:
+1. **Clonar el repositorio**
 
-**[https://vercel.com/angel-raas-projects/v0-vue-js-error](https://vercel.com/angel-raas-projects/v0-vue-js-error)**
+    ```bash
+    git clone https://github.com/Angel-Raa/Password-generator.git
+    cd Password-generator
+    ```
 
-## Build your app
+2. **Instalar dependencias**
 
-Continue building your app on:
+    ```bash
+    bun install
+    # o
+    npm install
+    ```
 
-**[https://v0.dev/chat/projects/6f68rhpP6tR](https://v0.dev/chat/projects/6f68rhpP6tR)**
+3. **Configurar variables de entorno**
+    - Copia el archivo `.env.example` a `.env` y configura las variables necesarias, especialmente la conexión de base de datos para Prisma.
 
-## How It Works
+4. **Configurar la base de datos con Prisma**
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+    ```bash
+    bunx prisma migrate dev --name init
+    ```
+
+5. **Ejecutar el proyecto en desarrollo**
+
+    ```bash
+    bun run dev
+    # o
+    npm dev
+    ```
+
+6. **Acceder a la aplicación**
+    - Abre tu navegador en `http://localhost:3000`
+
+## Recursos adicionales
+
+- [Documentación Next.js](https://nextjs.org/docs)
+- [Documentación Prisma](https://www.prisma.io/docs/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [shadcn/ui](https://ui.shadcn.com/docs)
