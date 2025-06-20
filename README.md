@@ -18,35 +18,35 @@ Este proyecto es una aplicación web para generar contraseñas seguras, desarrol
 
 1. **Clonar el repositorio**
 
-    ```bash
+    \`\`\`bash
     git clone https://github.com/Angel-Raa/Password-generator.git
     cd Password-generator
-    ```
+    \`\`\`
 
 2. **Instalar dependencias**
 
-    ```bash
+    \`\`\`bash
     bun install
     # o
     npm install
-    ```
+    \`\`\`
 
 3. **Configurar variables de entorno**
     - Copia el archivo `.env.example` a `.env` y configura las variables necesarias, especialmente la conexión de base de datos para Prisma.
 
 4. **Configurar la base de datos con Prisma**
 
-    ```bash
+    \`\`\`bash
     bunx prisma migrate dev --name init
-    ```
+    \`\`\`
 
 5. **Ejecutar el proyecto en desarrollo**
 
-    ```bash
+    \`\`\`bash
     bun run dev
     # o
     npm dev
-    ```
+    \`\`\`
 
 6. **Acceder a la aplicación**
     - Abre tu navegador en `http://localhost:3000`

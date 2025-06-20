@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   themeColor: "#ffffff",
+    generator: 'v0.dev'
 };
 
 export default function RootLayout({
